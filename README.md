@@ -84,31 +84,3 @@ To configure FirebaseContext for this project:
 3. Navigate to the project settings and locate your FirebaseContext configuration.
 4. Copy the configuration details and replace the placeholders in your `.env.local` file.
 
-## Available Scripts
-
-In the project directory, you can run the following scripts:
-
-### `npm run dev`
-
-Runs the app in development mode. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder. It correctly bundles React in production mode and optimizes the
-build for the best performance.
-
-### `npm run lint`
-
-Lints the codebase using ESLint. This ensures your code adheres to specified linting rules and conventions. It
-checks `.js` and `.jsx` files, reports any unused disable directives, and sets the maximum number of warnings to 0.
-
-### `npm run preview`
-
-Previews the production build locally. Useful for testing the production build before deploying.
-
-### `npm run format`
-
-Formats the codebase using Prettier. It targets all `.js` and `.jsx` files within the `src` directory to ensure
-consistent code formatting.
-
-
