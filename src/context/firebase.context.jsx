@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+// import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 import {
   createUserWithEmailAndPassword,
   FacebookAuthProvider,
@@ -26,8 +27,8 @@ import {
   startAfter,
 } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
-import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
+// Firebase Context
 const FirebaseContext = createContext(null);
 
 // Firebase configuration
@@ -53,16 +54,8 @@ const facebookProvider = new FacebookAuthProvider();
 const firestore = getFirestore(firebaseApp);
 const storage = getStorage(firebaseApp);
 
-// Enable Firebase analytics
-// eslint-disable-next-line no-unused-vars
+// Enable Firebase Analytics
 const analytics = getAnalytics(firebaseApp);
-
-// Enable Firebase AppCheck
-// eslint-disable-next-line no-unused-vars
-const appCheck = initializeAppCheck(firebaseApp, {
-  provider: new ReCaptchaV3Provider(import.meta.env.VITE_RECAPTCHA_SITE_KEY),
-  isTokenAutoRefreshEnabled: true,
-});
 
 export const FirebaseProvider = (props) => {
   const [user, setUser] = useState(null);
@@ -108,12 +101,15 @@ export const FirebaseProvider = (props) => {
   const signInUserWithGoogle = async () => {
     signInWithPopup(firebaseAuth, googleProvider);
   };
+
   const signInUserWithGithub = async () => {
     signInWithPopup(firebaseAuth, githubProvider);
   };
+
   const signInUserWithTwitter = async () => {
     signInWithPopup(firebaseAuth, twitterProvider);
   };
+
   const signInUserWithFacebook = async () => {
     signInWithPopup(firebaseAuth, facebookProvider);
   };
@@ -310,26 +306,25 @@ export const FirebaseProvider = (props) => {
         signInUserWithEmailAndPassword,
         signInUserWithGoogle,
         signInUserWithGithub,
-        signInUserWithFacebook,
         signInUserWithTwitter,
-        isLoggedIn,
+        signInUserWithFacebook,
+        signOut: handleSignOut,
         handleCreateNewListing,
-        handleSignOut,
-        user,
-        loading,
-        error,
+        handleUserProfileUpdate,
         getListBooks,
+        resetPagination,
         getBookById,
         getImageUrl,
-        handleUserProfileUpdate,
         placeOrder,
         fetchMyProducts,
-        resetPagination,
+        loading,
+        error,
+        isLoggedIn,
+        user,
       }}
     >
       {props.children}
     </FirebaseContext.Provider>
   );
 };
-
 export default FirebaseProvider;
