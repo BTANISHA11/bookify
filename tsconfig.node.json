@@ -1,10 +1,28 @@
+// {
+//   "compilerOptions": {
+//     "composite": true,
+//     "skipLibCheck": true,
+//     "module": "ESNext",
+//     "moduleResolution": "bundler",
+//     "allowSyntheticDefaultImports": true
+//   },
+//   "include": ["vite.config.ts"]
+// }
+
+
 {
   "compilerOptions": {
     "composite": true,
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "strict": true, // Enforces strict type checking
+    "esModuleInterop": true, // Ensures compatibility with ES module imports
+    "target": "ESNext", // Specifies the target JavaScript version
+    "resolveJsonModule": true, // Allows importing .json files
+    "jsx": "preserve" // For using JSX if you're working with React or similar frameworks
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.js", "src/**/*.js"],
+  "exclude": ["node_modules", "dist"] // Exclude common folders like node_modules and dist
 }
