@@ -3,7 +3,7 @@
 <img height="80px" src="https://github.com/user-attachments/assets/deefdc86-594b-4c2a-b3e9-dc8a036c83ee" alt="">
 
 <h1>Bookafy</h1>
-<a href="https://bookify.ranitmanik.live">View Demo</a>
+
 ·
 <a href=".github/ISSUE_TEMPLATE/bug_report.md">Report Bug</a>
 ·
