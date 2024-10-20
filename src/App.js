@@ -10,6 +10,7 @@ import OrdersRoute from "@/routes/orders.route.jsx";
 import { ProductsRoute } from "@/routes/products.route.jsx";
 import ErrorRoute from "@/routes/error.route.jsx";
 import NavigationRoute from "@/routes/navigation.route.jsx";
+import FeaturesRoute from "@/routes/features.route.jsx";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="orders" element={<OrdersRoute />} />
         <Route path="products" element={<ProductsRoute />} />
         <Route path="book/view/:bookId" element={<BookDetailsRoute />} />
+        <Route path="features" element={<FeaturesRoute />} />
       </Route>
     </Routes>
   );

@@ -43,6 +43,8 @@ export const NavigationComponent = () => {
     { label: "Products", to: "/products" },
     { label: "Setting", to: "/setting" },
     { label: "Support", to: "/support" },
+    {label :"Features", to:"/features"},
+    
   ];
 
   useEffect(() => {
